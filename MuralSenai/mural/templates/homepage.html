@@ -1,0 +1,138 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+SENAI - HOME
+{% endblock %}
+
+{% block head %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+  <div>
+    <h1 class="MuralTitulo">MURAL - SENAI <br>JUNDIAÍ</br></h1>
+  </div>
+  <div>
+  <div class="form-container">
+    <h2 class="BEntrar" style="font-family: 'Inter', sans-serif;">ENTRAR</h2>
+    <form>
+      <label for="email" style="font-family: 'Inter', sans-serif;">Email:</label>
+      <input type="text" id="email" name="email" required>
+
+      <label for="password" style="font-family: 'Inter', sans-serif;">Senha:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" style="font-family: 'Inter', sans-serif;">Acessar</button>
+    </form>
+  </div>
+    <div class="login-link">
+      <a href="#" style="font-family: 'Inter', sans-serif;">Esqueceu sua senha?</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+
+  .container {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .form-container {
+    background-color: #f00;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-right: 150px;
+    
+  }
+
+  label {
+    margin-bottom: 5px;
+    display: block;
+    color: white;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.587);;
+  }
+
+  button {
+    background-color: rgba(255, 255, 255, 0.587);
+    color: #f00;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .login-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .login-link a {
+    display: flex;
+    color: #fff;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: normal;
+    letter-spacing: 0;
+    margin-left: 65px;
+
+  }
+
+  .login-link a:hover {
+    text-decoration: underline;
+  
+  }
+
+  .BEntrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .MuralTitulo {
+    font-family: 'Inria Serif', serif;
+    font-size: 40px;
+    text-align: center; /* Centraliza o texto */
+    display: inline-block; /* Opcional, para garantir que o texto se comporte como um bloco de texto */
+    
+}
+
+   
+</style>
+
+{% endblock %}
