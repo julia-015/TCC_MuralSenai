@@ -12,3 +12,11 @@ def homepage(request):
 def inicio(request):
     return render(request, 'telainicial.html')
 
+def cadastro(request):
+    return render(request, 'cadastro.html')
+
+def muralaviso(request):
+    return render(request, 'muralaviso.html')
+
+def carometro(request):
+    return render(request, 'carometro.html')

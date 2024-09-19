@@ -6,7 +6,6 @@
         /* Cor do texto */
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
-
     }
 
     .custom-dropdown .btn-secondary:hover {
@@ -47,18 +46,27 @@
 
     }
 
-    .navbar-nav{
+    .navbar-nav {
         padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        padding-left: 25px;
+        padding-right: 26px;
+        align-items: center;
     }
 
     .logo2 {
         display: flex;
-        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
     }
 
     .logo2 i {
         font-size: 24px;
         margin-right: 5px;
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
     }
 
     .logo2 p {
@@ -66,17 +74,54 @@
         font-size: 18px;
         font-weight: bold;
     }
+    .IconButton-homepage {
+    text-decoration: none;
+    color: var(--text-color); /* Cor baseada no tema */
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.IconButton-homepage:hover {
+    color: #781010;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+    p {
+        display: flex;
+        justify-content: center;
+    }
+
+    .spacer {
+        flex-grow: 1;
+    }
+
+    .Buttons-component{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-right: 10px;
+    }
 
 </style>
 <nav class="navbar navbar-expand-lg" style="background-color: #000000;">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav" style="gap: 900px">
                 <div class="logo2">
                     <img src="/media/logo/logosenaivermelha.png" alt="" style=" max-width: 200px; max-height: 200px ">
                 </div>
                 <div class="person" style="display: flex; align-items: center; gap: 10px;">
-                    <p style="font-size: 20px;">Login <i class="bi bi-person-circle" style="color: #fff; font-size: 35px;"></i></p>
+                    <div class="Buttons-component"><a id="theme-toggle" class="IconButton-homepage">
+                        <span class="material-symbols-outlined darkModeHomepage">
+                            contrast
+                            </span>
+                        </a>
+                    </div>
+                    <p style="font-size: 20px; display: flex;">|</p>
+                    <a href="http://127.0.0.1:8000/" style="font-size: 20px; color: #ffffff; text-decoration: none; margin-right: 10px;">Login</a>
+                    <i class="bi bi-person-circle" style="color: #fff; font-size: 35px;"></i>
                 </div>
 
             </div>

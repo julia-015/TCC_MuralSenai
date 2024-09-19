@@ -9,105 +9,88 @@ SENAI - MURAL
 {% block body %}
 
     <div class="container">
+        <!-- <i class="bi bi-circle-half"></i> -->
         <div class="buttons">
-            <a href="#" class="button-1">
-                <i class="bi bi-clipboard"></i>
-            </a>
-            <a href="#" class="button-2">
-                <i class="bi bi-person-bounding-box"></i>
-            </a>
+            <div class="button-group">
+                <a href="http://127.0.0.1:8000/muralaviso" class="button-1">
+                    <i class="bi bi-clipboard"></i>
+                </a>
+                <h1 class="button-title">Mural de Avisos</h1>
+            </div>
+            <div class="button-group">
+                <a href="http://127.0.0.1:8000/carometro" class="button-2">
+                    <i class="bi bi-person-bounding-box"></i>
+                </a>
+                <h1 class="button-title">Carômetro</h1>
+            </div>
         </div>
     </div>
-    <div class="title">
-        <h1>Mural de Avisos</h1>
-        <h1>Carômetro</h1>
-    </div>
-
 
 <style>
     body {
-        background-color: black;
         color: white;
         font-family: sans-serif;
         display: flex;
-        /* flex-direction: column; */
+        flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 0;
     }
-
-
 
     .container {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
         font-size: 60px;
     }
 
-    .logo {
-        font-size: 3em;
-        font-weight: bold;
-    }
-
     .buttons {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-
+        gap: 90px;
+        margin-top: 100px;
     }
 
-    .button-1 {
-        background-color: #eee;
-        border-radius: 50%;
-        padding: 20px;
+    .button-group {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100px;
-        height: 100px;
-        margin-right: 50px;
-    }
-
-    .button-1:hover {
-        background-color: #ddd;
-    }
-
-    .button-1 svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    .button-2 {
-        background-color: #eee;
-        border-radius: 50%;
-        padding: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        width: 100px;
-        height: 100px;
-        margin-left: 100px;
-    }
-
-    .button-2:hover {
-        background-color: #ddd;
-    }
-
-    .button-2 svg {
-        width: 40px;
-        height: 40px;
-    }
-
-    .title {
-        font-size: 1.2em;
-        margin-top: 20px;
         text-align: center;
+    }
+
+    .button-1, .button-2 {
+        background-color: #eee;
+        border-radius: 50%;
+        padding: 50px;
         display: flex;
-        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100px;
+        height: 100px;
+        font-size: 80px;
+        color: black;
+    }
+
+    .button-1:hover, .button-2:hover {
+        background-color: #ddd;
+    }
+
+    .button-1 svg, .button-2 svg {
+        width: 60px;
+        height: 60px;
+    }
+
+    .button-title {
+        font-size: 30px;
+        margin-top: 20px;
+        color: white;
+        font-family: 'Inter, serif', sans-serif;
+        font-weight: 300;    
     }
 </style>
 

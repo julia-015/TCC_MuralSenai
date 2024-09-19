@@ -3,30 +3,22 @@
 {% load static %}
 
 {% block title %}
-SENAI - HOME
+SENAI - CADASTRO
 {% endblock %}
 
 {% block body %}
-
 <div class="container">
-  <div>
-    <h1 class="MuralTitulo">MURAL - SENAI <br>JUNDIAÍ</br></h1>
-  </div>
-  <div>
   <div class="form-container">
-    <h2 class="BEntrar" style="font-family: 'Inter', sans-serif;">ENTRAR</h2>
+    <h2 class="BEntrar" style="font-family: 'Inter', sans-serif;">CADASTRO</h2>
     <form>
-      <label for="email" style="font-family: 'Inter', sans-serif;">Email:</label>
-      <input type="text" id="email" name="email" required>
-
-      <label for="password" style="font-family: 'Inter', sans-serif;">Senha:</label>
-      <input type="password" id="password" name="password" required>
-
-      <button type="submit" style="font-family: 'Inter', sans-serif;">Acessar</button>
+        <input type="text" placeholder="Digite seu Email" required>
+        <input type="text" placeholder="Informe sua Profissão" required>
+        <input type="password" placeholder="Digite sua Senha" required>
+        <button type="submit">Cadastrar</button>
     </form>
   </div>
     <div class="login-link">
-      <a href="#" style="font-family: 'Inter', sans-serif;">Esqueceu sua senha?</a>
+        <a href="http://127.0.0.1:8000/" class="login-link">Já possui uma conta? Faça login</a>
     </div>
   </div>
 </div>
@@ -43,10 +35,12 @@ SENAI - HOME
 
 
   .container {
-    display: flex;
+    display: block;
     align-items: center;
-    margin-left: 100px;
-    justify-content: space-between;
+    justify-content: center;
+    padding-top: 50px;
+    padding-left: 350px;
+    padding-right: 350px;
   }
 
   .logo {
@@ -60,7 +54,8 @@ SENAI - HOME
     padding: 20px;
     border-radius: 10px;
     margin-top: 50px;
-    margin-right: 150px;
+    align-items: center;
+    justify-content: center;
   }
 
   label {
@@ -102,7 +97,8 @@ SENAI - HOME
     font-family: sans-serif;
     font-weight: normal;
     letter-spacing: 0;
-    margin-left: 75px;
+    align-items: center;
+    justify-content: center;
 
   }
 
