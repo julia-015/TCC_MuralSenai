@@ -1,129 +1,114 @@
 <style>
-    .custom-dropdown .btn-secondary {
-        background-color: #ffffff;
-        /* Cor de fundo personalizada */
-        color: #ff0000;
-        /* Cor do texto */
-        font-family: 'Courier New', Courier, monospace;
-        font-weight: bold;
+    /* Variáveis de tema */
+    :root {
+        --background-image: url('../static/img/Plano\ de\ Fundo\ Web\ -\ Claro\ -\ Mural.png');
+        --text-color: #000;
+        --button-text: #fff;
+        --navbar-background: #ffffff; /* Cor de fundo da navbar (claro) */
+        --text-color: #000; /* Cor do texto geral (claro) */
+        --link-color: #000; /* Cor do link de login (claro) */
+        --icon-color: #000; /* Cor do ícone (claro) */
+        --h1-color: #000; /* Cor do h1 (claro) */
+        --link-color: #000000; /* Cor do link (claro) */
     }
 
-    .custom-dropdown .btn-secondary:hover {
-        background-color: #d0d0d0;
-        /* Cor de fundo ao passar o mouse */
+    /* Tema escuro */
+    .dark-theme {
+        --background-image: url('../static/img/Plano\ de\ Fundo\ Web\ -\ Escuro.png');
+        --text-color: #f1f1f1;
+        --button-text: #000;
+        --navbar-background: #000000; /* Cor de fundo da navbar (escuro) */
+        --text-color: #f1f1f1; /* Cor do texto geral (escuro) */
+        --link-color: #f1f1f1; /* Cor do link de login (escuro) */
+        --icon-color: #f1f1f1; /* Cor do ícone (escuro) */ 
+        --h1-color: #f1f1f1; /* Cor do h1 (escuro) */ 
+        --link-color: #ffff; /* Cor do link (escuro) */
     }
 
-    .custom-dropdown .dropdown-menu {
-        background-color: #ffffffdb;
-        /* Cor de fundo do dropdown */
-        border-radius: 10px;
-        /* Bordas arredondadas */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* Sombra */
+    /* Aplicação das variáveis */
+    body {
+        background-image: var(--background-image);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
     }
 
-    .custom-dropdown .dropdown-item {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        color: #333;
-        /* Cor do texto dos itens */
-    }
-
-    .custom-dropdown .dropdown-item:hover {
-        color: #000000;
-        /* Cor do texto ao passar o mouse */
-    }
-
-    .navbar-nav .navLinks a {
-        color: #ff0000;
-        /* Cor do texto */
-        margin-top: 0;
-        text-decoration: none;
-    }
-
-    .navbar-nav .navLinks a:hover {
-        color: #ff0000;
-        /* Cor do texto ao passar o mouse */
-
-    }
-
-    .navbar-nav {
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        padding-left: 25px;
-        padding-right: 26px;
-        align-items: center;
-    }
-
-    .logo2 {
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
-    }
-
-    .logo2 i {
-        font-size: 24px;
-        margin-right: 5px;
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
-    }
-
-    .logo2 p {
-        margin: 0;
-        font-size: 18px;
-        font-weight: bold;
-    }
     .IconButton-homepage {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: color 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+    }
+
+    .IconButton-homepage:hover {
+        color: #781010;
+        transform: scale(1.1);
+    }
+
+    button {
+        color: var(--button-text);
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    button:hover {
+        opacity: 0.8;
+    }
+
+    nav.navbar {
+    background-color: var(--navbar-background); /* Cor da navbar */
+    transition: background-color 0.3s ease;
+
+}
+
+.person p {
+    color: var(--text-color); /* Cor do texto | */
+}
+
+.person a {
+    color: var(--link-color); /* Cor do link de login */
     text-decoration: none;
-    color: var(--text-color); /* Cor baseada no tema */
-    transition: color 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.IconButton-homepage:hover {
-    color: #781010;
-    cursor: pointer;
-    transform: scale(1.1);
+.person a:hover {
+    color: #781010; /* Cor ao passar o mouse (mantém o hover anterior) */
 }
 
+.person i {
+    color: var(--icon-color); /* Cor do ícone */
+    transition: color 0.3s ease;
+}
 
-    p {
-        display: flex;
-        justify-content: center;
-    }
-
-    .spacer {
-        flex-grow: 1;
-    }
-
-    .Buttons-component{
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        margin-right: 10px;
-    }
+.navbar-nav {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 </style>
-<nav class="navbar navbar-expand-lg" style="background-color: #000000;">
+
+<nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav" style="gap: 900px">
+            <div class="navbar-nav" style="gap: 866px">
                 <div class="logo2">
-                    <img src="/media/logo/logosenaivermelha.png" alt="" style=" max-width: 200px; max-height: 200px ">
+                    <img src="/media/logo/logosenaivermelha.png" alt="Logo" style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="person" style="display: flex; align-items: center; gap: 10px;">
-                    <div class="Buttons-component"><a id="theme-toggle" class="IconButton-homepage">
-                        <span class="material-symbols-outlined darkModeHomepage">
-                            contrast
+                    <div class="Buttons-component">
+                        <button id="theme-toggle" class="IconButton-homepage" style="background: none;">
+                            <span class="material-symbols-outlined darkModeHomepage">
+                                contrast
                             </span>
-                        </a>
+                        </button>
                     </div>
                     <p style="font-size: 20px; display: flex;">|</p>
-                    <a href="http://127.0.0.1:8000/" style="font-size: 20px; color: #ffffff; text-decoration: none; margin-right: 10px;">Login</a>
-                    <i class="bi bi-person-circle" style="color: #fff; font-size: 35px;"></i>
+                    <a href="http://127.0.0.1:8000/" style="font-size: 20px; text-decoration: none; margin-right: 10px;">Login</a>
+                    <i class="bi bi-person-circle" style="font-size: 30px;"></i>
                 </div>
-
             </div>
         </div>
     </div>

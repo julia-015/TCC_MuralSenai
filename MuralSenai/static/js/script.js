@@ -1,11 +1,14 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const themeToogleBtn = document.getElementById("theme-toogle");
-    let currentTheme = localStorage.getItems("theme") || "light";
-    document.documentElement.setAttribute("data-theme", currentTheme);
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
 
-    themeToogleBtn.addEventListener("click", function(){
-        currentTheme = currentTheme === "light" ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", currentTheme);
-        localStorage.setItem("theme", currentTheme);
-    });
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+
+    // Atualiza o ícone com base no tema
+    const icon = themeToggleBtn.querySelector('.material-symbols-outlined');
+    if (body.classList.contains('dark-theme')) {
+        icon.textContent = 'brightness_5'; // Ícone de "sol" para tema claro
+    } else {
+        icon.textContent = 'contrast'; // Ícone de "lua" para tema escuro
+    }
 });

@@ -1,0 +1,23 @@
+/* Definições de variáveis e estilo do tema permanecem iguais, ajuste conforme necessário */
+:root {
+    --background-color: #fff;
+    --text-color: #000;
+    --button-text: #fff;
+}
+
+.dark-theme {
+    --background-color: #000;
+    --text-color: #f1f1f1;
+    --button-text: #000;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+}
+
+button {
+    color: var(--button-text);
+    transition: background-color 0.3s, color 0.3s;
+}
