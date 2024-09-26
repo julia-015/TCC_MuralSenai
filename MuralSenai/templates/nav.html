@@ -10,6 +10,7 @@
         --icon-color: #000; /* Cor do ícone (claro) */
         --h1-color: #000; /* Cor do h1 (claro) */
         --link-color: #000000; /* Cor do link (claro) */
+        
     }
 
     /* Tema escuro */
@@ -22,7 +23,7 @@
         --link-color: #f1f1f1; /* Cor do link de login (escuro) */
         --icon-color: #f1f1f1; /* Cor do ícone (escuro) */ 
         --h1-color: #f1f1f1; /* Cor do h1 (escuro) */ 
-        --link-color: #ffff; /* Cor do link (escuro) */
+        --link-color: #ffffff; /* Cor do link (escuro) */
     }
 
     /* Aplicação das variáveis */
@@ -30,6 +31,14 @@
         background-image: var(--background-image);
         color: var(--text-color);
         transition: background-color 0.3s ease, color 0.3s ease, background-image 0.3s ease;
+    }
+
+    a {
+    color: var(--link-color);
+    }
+
+    h1, p, span {
+        color: var(--text-color);
     }
 
     .IconButton-homepage {
@@ -93,7 +102,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav" style="gap: 866px">
+            <div class="navbar-nav" style="gap: 872px">
                 <div class="logo2">
                     <img src="/media/logo/logosenaivermelha.png" alt="Logo" style="max-width: 200px; max-height: 200px;">
                 </div>

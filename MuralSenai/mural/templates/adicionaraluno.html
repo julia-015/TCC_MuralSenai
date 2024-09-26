@@ -1,0 +1,160 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+SENAI - ADICIONAR ALUNO
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <section class="adicionar-aluno">
+        <h1>Adicionar Aluno</h1>
+        <div class="form-container">
+            <div class="left-side">
+                <i class="bi bi-person-circle" style="font-size: 150px;"></i>
+                
+            </div>
+
+            <div class="right-side">
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="nome">Nome:</label>
+                        </div>
+                        <div>
+                            {{form.nome}}
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="curso">Curso:</label>
+                        </div>
+                        <div>
+                            {{form.curso}}
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="cpf">CPF:</label>
+                        </div>
+                        <div>
+                            {{form.cpf}}
+                        </div>
+                    </div>
+
+            
+                    <div class="obs" >
+                        <div>
+                            <label for="observacoes">Observações:</label>
+                        </div>
+                        
+                        <div>
+                            {{form.observaçoes}}
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    body {
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding-top: 10px;
+    }
+
+    .adicionar-aluno h1 {
+        font-size: 2.5em;
+        font-weight: normal;
+        margin-bottom: 40px;
+        text-align: center;
+        margin-top: 10px;
+
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .left-side {
+    text-align: center;
+    padding-left: 30px;
+    margin-left: 30px;
+    margin-bottom: 90px;
+    margin-right: 130px;
+    margin-top: 10px;
+}
+
+    .form-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .obs{
+        display: block;
+        font-family: sans-serif;
+        font-size: 20px;
+
+    }
+
+    .form-group label {
+        font-size: 18px;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .form-control {
+        background-color: #686868;
+        color: white;
+        border: 1px solid #686868;
+        padding: 7px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        width: 400px;
+        box-sizing: border-box;
+    }
+
+    .btn {
+        background-color: #000000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+        width: 200px;
+        margin-top: 15px;
+        margin-left: 90px;
+    }
+
+    .btn:hover {
+        background-color: #555;
+    }
+</style>
+{% endblock %}
