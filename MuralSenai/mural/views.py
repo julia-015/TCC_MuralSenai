@@ -2,6 +2,8 @@ from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import FormAluno
+from .models import AAluno
+
 
 
 
@@ -33,7 +35,7 @@ def informaçoescar(request):
 
 def adicionarcurso(request):
     return render(request, 'adicionarcurso.html')
-
+    
 def adicionaraluno(request):
     context = {}
 
@@ -43,15 +45,20 @@ def adicionaraluno(request):
             var_nome = form.cleaned_data['nome']
             var_curso = form.cleaned_data['curso']
             var_cpf = form.cleaned_data['cpf']
-            var_observaçoes = form.cleaned_data['observaçoes']
+            var_observacoes = form.cleaned_data.get('observacoes', '') 
 
             try:
-                aluno = AAluno(nome=var_nome, curso=var_curso, cpf=var_cpf, observaçoes=var_observaçoes)
-                aluno.save()
-               
-                return redirect("lista_alunos")
+                if AAluno.objects.filter(cpf=var_cpf).exists():
+                    context.update({"error": "CPF já cadastrado!"})
+                else:
+
+                    user_aluno = AAluno (nome=var_nome, curso=var_curso, cpf=var_cpf, observacoes=var_observacoes)
+                    user_aluno.save()
+
+                    context.update({"success": "Aluno adicionado com sucesso!"})
             except Exception as e:
                 context.update({"error": str(e)})
+
         else:
             context.update({"form": form})
             return render(request, 'adicionaraluno.html', context)
@@ -62,16 +69,10 @@ def adicionaraluno(request):
         return render(request, 'adicionaraluno.html', context)
 
 
+
 def editarcurso(request):
     return render(request, 'editarcurso.html')
 
 def editaraluno(request):
     return render(request, 'editaraluno.html')
-
-# views.py (Adicionando uma view para listar alunos)
-from .models import AAluno
-
-def lista_alunos(request):
-    alunos = AAluno.objects.all()
-    # return render(request, 'lista_alunos.html', {'alunos': alunos})
 

@@ -8,7 +8,7 @@ SENAI - CARÔMETRO
 
 {% block body %}
 
-<div class="container">
+<div class="container" style="display: flex; justify-content: center; align-items: center;">
   <div class="buttons">
     <div class="button-group">
       <a href="http://127.0.0.1:8000/muralaviso" class="button-1">
@@ -26,13 +26,13 @@ SENAI - CARÔMETRO
       <a href="http://127.0.0.1:8000/muralaviso" class="button-1">
         <i class="bi bi-database-fill-gear"></i>
       </a>
-      <h1 class="button-title">Auxiliar de Linha de Produção</h1>
+      <h1 class="button-title">Auxiliar de Linha <br>de Produção</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
         <i class="bi bi-hourglass"></i>
       </a>
-      <h1 class="button-title">Ceramista de Louças Sanitárias</h1>
+      <h1 class="button-title">Ceramista de Louças <br>Sanitárias</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
@@ -40,19 +40,19 @@ SENAI - CARÔMETRO
           water_bottle
           </span>
       </a>
-      <h1 class="button-title">Construtor de Moldes para Plásticos</h1>
+      <h1 class="button-title">Construtor de Moldes <br>para Plásticos</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
         <i class="bi bi-cpu"></i>
       </a>
-      <h1 class="button-title">Eletricista de Manutenção Eletroeletrônica</h1>
+      <h1 class="button-title">Eletricista de Manutenção <br>Eletroeletrônica</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
         <i class="bi bi-train-freight-front"></i>
       </a>
-      <h1 class="button-title">Mantenedor Eletromecânico de Locomotivas</h1>
+      <h1 class="button-title">Mantenedor Eletromecânico <br>de Locomotivas</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
@@ -72,7 +72,7 @@ SENAI - CARÔMETRO
           water_bottle
           </span>
       </a>
-      <h1 class="button-title">Mecânico de Usinagem de Moldes para Plásticos</h1>
+      <h1 class="button-title">Mecânico de Usinagem de <br>Moldes para Plásticos</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
@@ -80,7 +80,7 @@ SENAI - CARÔMETRO
           water_bottle
           </span>
       </a>
-      <h1 class="button-title">Projetista de Moldes para Plásticos</h1>
+      <h1 class="button-title">Projetista de Moldes <br>para Plásticos</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/muralaviso" class="button-1">
@@ -92,7 +92,7 @@ SENAI - CARÔMETRO
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
         <i class="bi bi-laptop"></i>
       </a>
-      <h1 class="button-title">Técnico em Desenvolvimento de Sistemas</h1>
+      <h1 class="button-title">Técnico em Desenvolvimento <br>de Sistemas</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
@@ -110,7 +110,7 @@ SENAI - CARÔMETRO
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
         <i class="bi bi-building-gear"></i>
       </a>
-      <h1 class="button-title">Técnico em Manutenção de Máquinas Industriais</h1>
+      <h1 class="button-title">Técnico em Manutenção de <br>Máquinas Industriais</h1>
     </div>
     <div class="button-group">
       <a href="http://127.0.0.1:8000/carometro" class="button-2">
@@ -138,12 +138,6 @@ SENAI - CARÔMETRO
   }
 
 
-  .container {
-    display: flex;
-    align-items: center;
-    margin-left: 100px;
-    justify-content: space-between;
-  }
 
   .logo {
     font-size: 3em;
@@ -151,30 +145,32 @@ SENAI - CARÔMETRO
     margin-bottom: 20px;
   }
 
-  body {
+  /* body {
     font-family: sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-  }
+  } */
+
 
 
 
   .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-  }
+  display: flex;
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  align-items: center; /* Centraliza os itens verticalmente */
+  height: 100vh; /* Certifica-se de que o contêiner ocupe a altura total da janela */
+  margin: 0 auto; /* Certifica-se de que o contêiner esteja centralizado horizontalmente */
+}
 
   .buttons {
     display: flex;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 2000px;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 5px; 
   }
 
   .button-group {
@@ -183,7 +179,7 @@ SENAI - CARÔMETRO
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: calc(25% - 10px); 
+    flex-basis: calc(50% - 30px); 
     margin-bottom: 15px; 
   }
 
