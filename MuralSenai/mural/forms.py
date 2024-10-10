@@ -1,25 +1,38 @@
 from django import forms
-from .models import AAluno
+from django.contrib.auth.forms import AuthenticationForm
+from .models import AAluno, Cadastro
 
 
-class FormLogin(forms.Form):
-    user = forms.CharField(label="Usuário", max_length=20)
-    password = forms.CharField(label="Senha", widget=forms.PasswordInput)
+class FormLogin(AuthenticationForm):
+    username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome de Usuário'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Senha'}))
+
+
+class FormCadastro(forms.Form):
+        nome = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+        email = forms.EmailField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+        profissao = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+        criarsenha = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
 
 class FormAluno(forms.Form):
     nome = forms.CharField(
         max_length=100,
-        widget=forms.TextInput(attrs={'placeholder': 'Nome', 'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    curso = forms.CharField(
+    telefone = forms.CharField(
+        max_length=15,  # Limite adequado para um número de telefone
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+    nome_pai = forms.CharField(  # Certifique-se de usar o nome correto (nome_pai)
         max_length=100,
-        widget=forms.TextInput(attrs={'placeholder': 'Cursos', 'class': 'form-control'})
+        widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    cpf = forms.CharField(
-        max_length=20,
-        widget=forms.TextInput(attrs={'placeholder': 'CPF', 'class': 'form-control'})
+    nome_mae = forms.CharField(  # Certifique-se de usar o nome correto (nome_mae)
+        max_length=100,
+        widget=forms.TextInput(attrs={'class': 'form-control'})
     )
-    observaçoes = forms.CharField(
+    observacoes = forms.CharField(
         max_length=1000,
-        widget=forms.TextInput(attrs={'placeholder': 'Observações', 'class': 'form-control'})
+        widget=forms.Textarea(attrs={'class': 'form-control'})  # Use Textarea para observações mais longas
     )

@@ -15,15 +15,31 @@ SENAI - HOME
   <div>
     <div class="form-container">
       <h2 class="BEntrar" style="font-family: 'Inter', sans-serif;">ENTRAR</h2>
-      <form>
-        <label for="email" style="font-family: 'Inter', sans-serif;">Email:</label>
-        <input type="text" id="email" name="email" required>
+      <form method="POST">
+        {% csrf_token %}
 
-        <label for="password" style="font-family: 'Inter', sans-serif;">Senha:</label>
-        <input type="password" id="password" name="password" required>
+        <div class="form-group" style="display: block;">
+            <div>
+                <label for="id_nome">Usuário:</label>
+            </div>
+            <div>
+                {{ form.username}}
+            </div>
+        </div>
 
-        <button type="submit" style="font-family: 'Inter', sans-serif;">Acessar</button>
-      </form>
+        <div class="form-group" style="display: block;">
+            <div>
+                <label for="id_email">Senha:</label>
+            </div>
+            <div>
+                {{ form.password}}
+            </div>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </div>
+    </form>
     </div>
     <div class="login-link">
       <a href="#" style="font-family: 'Inter', sans-serif;">Esqueceu sua senha?</a>

@@ -19,10 +19,11 @@ SENAI - ADICIONAR ALUNO
             <div class="right-side">
                 <form method="POST">
                     {% csrf_token %}
+                    
 
                     <div class="form-group" style="display: block;">
                         <div>
-                            <label for="nome">Nome:</label>
+                            <label for="nome">Nome Completo:</label>
                         </div>
                         <div>
                             {{form.nome}}
@@ -32,19 +33,28 @@ SENAI - ADICIONAR ALUNO
 
                     <div class="form-group" style="display: block;">
                         <div>
-                            <label for="curso">Curso:</label>
+                            <label for="curso">Telefone de Contato:</label>
                         </div>
                         <div>
-                            {{form.curso}}
+                            {{form.telefone}}
                         </div>
                     </div>
 
                     <div class="form-group" style="display: block;">
                         <div>
-                            <label for="cpf">CPF:</label>
+                            <label for="cpf">Nome do Pai:</label>
                         </div>
                         <div>
-                            {{form.cpf}}
+                            {{form.nome_pai}}
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="cpf">Nome da Mãe:</label>
+                        </div>
+                        <div>
+                            {{form.nome_mae}}
                         </div>
                     </div>
 
@@ -55,7 +65,7 @@ SENAI - ADICIONAR ALUNO
                         </div>
                         
                         <div>
-                            {{form.observaçoes}}
+                            {{form.observacoes}}
                         </div>
                     </div>
 
@@ -84,11 +94,11 @@ SENAI - ADICIONAR ALUNO
 
     .adicionar-aluno h1 {
         font-size: 2.5em;
-        font-weight: normal;
         margin-bottom: 40px;
         text-align: center;
         margin-top: 10px;
-
+        font-family: 'Inria Serif', serif;
+        font-weight: bold;
     }
 
     .form-container {
@@ -129,7 +139,7 @@ SENAI - ADICIONAR ALUNO
     }
 
     .form-control {
-        background-color: #686868;
+        background-color: #bcbcbc;
         color: white;
         border: 1px solid #686868;
         padding: 7px;
@@ -138,10 +148,11 @@ SENAI - ADICIONAR ALUNO
         margin-bottom: 15px;
         width: 400px;
         box-sizing: border-box;
+        height: 35px;
     }
 
     .btn {
-        background-color: #000000;
+        background-color: #686868;
         color: white;
         border: none;
         cursor: pointer;
