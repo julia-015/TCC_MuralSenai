@@ -9,6 +9,10 @@ from .models import AAluno, Cadastro
 
 
 
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from .forms import FormLogin
+
 def homepage(request):
     if request.method == "POST":
         form = FormLogin(request, data=request.POST)
@@ -20,13 +24,14 @@ def homepage(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('inicio')  # Redirecione para a página desejada após o login
+                return redirect('inicio')  # Redireciona para a página desejada
             else:
                 form.add_error(None, "Nome de usuário ou senha inválidos.")
     else:
         form = FormLogin()
 
     return render(request, 'homepage.html', {'form': form})
+
 
 def inicio(request):
     return render(request, 'telainicial.html')
