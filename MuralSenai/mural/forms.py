@@ -36,6 +36,7 @@ class FormAluno(forms.Form):
         max_length=1000,
         widget=forms.Textarea(attrs={'class': 'form-control'})  # Use Textarea para observações mais longas
     )
+    turma = forms.ModelChoiceField(queryset=ATurma.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
 
 class FormCurso(forms.Form):
     curso = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
@@ -43,3 +44,4 @@ class FormCurso(forms.Form):
 class FormTurma(forms.Form):
     turma = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     periodo = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+    curso = forms.ModelChoiceField(queryset=ACurso.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))

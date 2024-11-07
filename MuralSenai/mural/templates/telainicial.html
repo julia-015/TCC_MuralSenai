@@ -8,8 +8,13 @@ SENAI - MURAL
 
 {% block body %}
 
-    <div class="container" style="padding-top: 80px;">
-        <div class="buttons">
+    <div class="container" style="width: 1150px;">
+        <div style="justify-content: center; align-items: center; margin-top: 280px; position: fixed; font-size: 50px;">
+            <a href="http://127.0.0.1:8000/" style="color: rgb(183, 33, 33); ">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+            </a>
+        </div>
+        <div class="buttons" style="justify-content: center; align-items: center; padding-top: 100px; padding-left: 300px;">
             <div class="button-group">
                 <a href="http://127.0.0.1:8000/muralaviso" class="button-1">
                     <i class="bi bi-clipboard"></i>
@@ -37,10 +42,8 @@ SENAI - MURAL
 
     .container {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         font-size: 60px;
+        margin-left: 0px;
     }
 
     .buttons {

@@ -7,6 +7,7 @@ SENAI - CARÔMETRO
 {% endblock %}
 
 {% block body %}
+
 <div class="container" style="padding-top: 80px; display: block;">
   <div class="buttons-adicionais" style="background-color: #d9d9d9; width: 130px; display: flex; align-items: center; justify-content: space-between; border-radius: 15px; padding-left: 20px; padding-right: 20px; margin-top: 20px; margin-left: 1060px; height: 50px; margin-bottom: 10px;">
     <a href="{% url 'adicionarturma' %}">
@@ -22,17 +23,17 @@ SENAI - CARÔMETRO
     </a>
   </div>
 
-  <div class="buttons" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
-    {% for turma in turmas %}
-      <div class="button-group">
-        <a href="{% url 'carometro2' %}" class="button-1">
-          <i class="bi bi-inboxes"></i>
-        </a>
-        <h1 class="button-title">{{ turma.turma }}</h1>
-      </div>
-    {% empty %}
-      <p>Nenhuma turma encontrada.</p>
-    {% endfor %}
+  <div class="container" style="padding-top: 80px;">
+    <h1>{{ curso.curso }}</h1>
+    <div class="buttons" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap;">
+        {% for turma in turmas %}
+            <div class="button-group">
+                <h2 class="button-title">{{ turma.turma }}</h2>
+            </div>
+        {% empty %}
+            <p>Nenhuma turma encontrada.</p>
+        {% endfor %}
+    </div>
   </div>
 </div>
 
