@@ -7,61 +7,30 @@ SENAI - ADICIONAR CURSO
 {% endblock %}
 
 {% block body %}
-<div class="container">
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
     <section class="adicionar-curso">
         <h1>Adicionar Curso</h1>
         <div class="form-container">
             <div class="left-side">
-                <i class="bi bi-person-circle" style="font-size: 150px;"></i>
-                
+                <i class="bi bi-person-circle" style="font-size: 150px; padding-left: 50px; "></i>
             </div>
 
             <div class="right-side">
                 <form method="POST">
                     {% csrf_token %}
                     
-
                     <div class="form-group" style="display: block;">
                         <div>
-                            <label for="nome">Nome:</label>
-                        </div>
-                        <div>
-                            {{form.nome}}
-                        </div>
-                        
-                    </div>
-
-                    <div class="form-group" style="display: block;">
-                        <div>
-                            <label for="curso">Curso:</label>
+                            <label for="nome">Curso:</label>
                         </div>
                         <div>
                             {{form.curso}}
                         </div>
-                    </div>
-
-                    <div class="form-group" style="display: block;">
-                        <div>
-                            <label for="cpf">CPF:</label>
-                        </div>
-                        <div>
-                            {{form.cpf}}
-                        </div>
-                    </div>
-
-            
-                    <div class="obs" >
-                        <div>
-                            <label for="observacoes">Observações:</label>
-                        </div>
                         
-                        <div>
-                            {{form.observacoes}}
-                        </div>
                     </div>
 
                     <div>
-                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <button type="submit" action="POST" class="btn btn-primary">Adicionar</button>
                     </div>
 
                 </form>
@@ -80,7 +49,7 @@ SENAI - ADICIONAR CURSO
 
     .container {
         margin: 0 auto;
-        padding-top: 10px;
+        padding-top: 80px;
     }
 
     .adicionar-curso h1 {
@@ -89,11 +58,13 @@ SENAI - ADICIONAR CURSO
         margin-bottom: 40px;
         text-align: center;
         margin-top: 10px;
+        font-family: 'Inria Serif', serif;
+        font-weight: bold;
 
     }
 
     .form-container {
-        display: flex;
+        display: inline-block;
         justify-content: center;
         align-items: center;
         border-radius: 10px;
@@ -104,7 +75,7 @@ SENAI - ADICIONAR CURSO
     text-align: center;
     padding-left: 30px;
     margin-left: 30px;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
     margin-right: 130px;
     margin-top: 10px;
 }
@@ -130,7 +101,7 @@ SENAI - ADICIONAR CURSO
     }
 
     .form-control {
-        background-color: #bcbcbc;
+        background-color: #bcbcbc80;
         color: white;
         border: 1px solid #686868;
         padding: 7px;
@@ -152,6 +123,8 @@ SENAI - ADICIONAR CURSO
         width: 200px;
         margin-top: 15px;
         margin-left: 90px;
+        font-family: 'Inria Serif', serif;
+        font-weight: bold;
     }
 
     .btn:hover {

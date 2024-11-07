@@ -3,74 +3,41 @@
 {% load static %}
 
 {% block title %}
-SENAI - ADICIONAR ALUNO
+SENAI - ADICIONAR TURMA
 {% endblock %}
 
 {% block body %}
 <div class="container" style="display: flex; align-items: center; justify-content: center;">
-    <section class="adicionar-aluno">
-        <h1>Adicionar Aluno</h1>
+    <section class="adicionar-turma">
+        <h1>Adicionar Turma</h1>
         <div class="form-container">
             <div class="left-side">
-                <i class="bi bi-person-circle" style="font-size: 150px; padding-left: 50px;"></i>
-                
+                <i class="bi bi-person-circle" style="font-size: 150px; padding-left: 50px; "></i>
             </div>
 
             <div class="right-side">
                 <form method="POST">
                     {% csrf_token %}
                     
-
                     <div class="form-group" style="display: block;">
                         <div>
-                            <label for="nome">Nome Completo:</label>
+                            <label for="nome">Turma:</label>
                         </div>
                         <div>
-                            {{form.nome}}
+                            {{form.turma}}
+                        </div>
+
+                        <div>
+                            <label for="nome">Período:</label>
+                        </div>
+                        <div>
+                            {{form.periodo}}
                         </div>
                         
-                    </div>
-
-                    <div class="form-group" style="display: block;">
-                        <div>
-                            <label for="curso">Telefone de Contato:</label>
-                        </div>
-                        <div>
-                            {{form.telefone}}
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="display: block;">
-                        <div>
-                            <label for="cpf">Nome do Pai:</label>
-                        </div>
-                        <div>
-                            {{form.nome_pai}}
-                        </div>
-                    </div>
-
-                    <div class="form-group" style="display: block;">
-                        <div>
-                            <label for="cpf">Nome da Mãe:</label>
-                        </div>
-                        <div>
-                            {{form.nome_mae}}
-                        </div>
-                    </div>
-
-            
-                    <div class="obs" >
-                        <div>
-                            <label for="observacoes">Observações:</label>
-                        </div>
-                        
-                        <div>
-                            {{form.observacoes}}
-                        </div>
                     </div>
 
                     <div>
-                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                        <button type="submit" action="POST" class="btn btn-primary">Adicionar</button>
                     </div>
 
                 </form>
@@ -92,13 +59,15 @@ SENAI - ADICIONAR ALUNO
         padding-top: 80px;
     }
 
-    .adicionar-aluno h1 {
+    .adicionar-curso h1 {
         font-size: 2.5em;
+        font-weight: normal;
         margin-bottom: 40px;
         text-align: center;
         margin-top: 10px;
         font-family: 'Inria Serif', serif;
         font-weight: bold;
+
     }
 
     .form-container {
@@ -148,7 +117,6 @@ SENAI - ADICIONAR ALUNO
         margin-bottom: 15px;
         width: 400px;
         box-sizing: border-box;
-        height: 35px;
     }
 
     .btn {

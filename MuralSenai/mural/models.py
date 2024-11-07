@@ -33,3 +33,16 @@ class AAluno(models.Model):
     def __str__(self):
         return self.nome
 
+class ACurso(models.Model):
+    curso = models.CharField(max_length=100)
+    icon = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.curso
+
+class ATurma(models.Model):
+    turma = models.CharField(max_length=100)
+    periodo = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.turma

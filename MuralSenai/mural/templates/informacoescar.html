@@ -8,22 +8,34 @@ SENAI - INFORMAÇÕES CARÔMETRO
 
 {% block body %}
 
-<div class="container">
+<div class="container" style="padding-top: 100px;">
+
+    <div class="icones-btn">
+        <div class="caixa-btn">
+            <button class="btn">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+            <button class="btn">
+                <i class="bi bi-trash3"></i>
+            </button>
+        </div>
+    </div>
 
     <!-- Seção do carômetro com informações do usuário -->
     <section class="carometro">
         <h1>Carômetro</h1>
-        <div class="info-container">
-            <div class="user-icon">
-                <i class="bi bi-person-circle" style="font-size: 150px;"></i> <!-- Trocar por imagem -->
-            </div>
-            <div class="info-text">
-                <p><strong>Nome completo:</strong> Nome do usuário</p>
-                <p><strong>Contato:</strong> (xx) xxxx-xxxx</p>
-                <p><strong>Nome Pai ou Responsável:</strong> Nome do pai</p>
-                <p><strong>Nome Mãe ou Responsável:</strong> Nome da mãe</p>
-            </div>
-        </div>
+        <ul>
+            {% for aluno in alunos %}
+                <li>
+                    Nome: {{ aluno.nome }} <br>
+                    Curso: {{ aluno.curso }} <br>
+                    CPF: {{ aluno.cpf }} <br>
+                    Observações: {{ aluno.observacoes }} <br>
+                </li>
+            {% empty %}
+                <li>Não há alunos cadastrados.</li>
+            {% endfor %}
+        </ul>
         <div class="extra-info">
             <p><strong>Informações:</strong></p>
             <!-- Adicionar informações adicionais aqui -->
@@ -72,7 +84,7 @@ SENAI - INFORMAÇÕES CARÔMETRO
 
     /* Seção principal do Carômetro */
     .carometro {
-        margin-top: 90px;
+        margin-top: 30px;
         text-align: center;
     }
 
@@ -110,6 +122,29 @@ SENAI - INFORMAÇÕES CARÔMETRO
         margin-top: 30px;
         font-size: 1.2em;
         margin-right: 80px;
+    }
+
+    .btn {
+        border: 1px solid var(--button-background);
+        border-radius: 15px; 
+        font-size: 20px;
+        background-color: var(--button-background);
+    }
+
+    .caixa-btn {
+        border: 1px solid var(--button-background);
+        border-radius: 15px; 
+        background-color: var(--button-background);
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icones-btn {
+        display: flex;
+        justify-content: right;
+        padding-right: 25px;
     }
 </style>
 

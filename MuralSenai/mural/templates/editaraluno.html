@@ -1,5 +1,4 @@
 {% extends 'index.html' %}
-
 {% load static %}
 
 {% block title %}
@@ -7,36 +6,161 @@ SENAI - EDITAR ALUNO
 {% endblock %}
 
 {% block body %}
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <section class="adicionar-aluno">
+        <h1>Editar Aluno</h1>
+        <div class="form-container">
+            <div class="left-side">
+                <i class="bi bi-person-circle" style="font-size: 150px; padding-left: 50px;"></i>
+            </div>
 
-<div class="container">
+            <div class="right-side">
+                <form method="POST">
+                    {% csrf_token %}
+                    
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="nome">Nome Completo:</label>
+                        </div>
+                        <div>
+                            {{ form.nome }}
+                        </div>
+                    </div>
 
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="telefone">Telefone de Contato:</label>
+                        </div>
+                        <div>
+                            {{ form.telefone }}
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="nome_pai">Nome do Pai:</label>
+                        </div>
+                        <div>
+                            {{ form.nome_pai }}
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="display: block;">
+                        <div>
+                            <label for="nome_mae">Nome da Mãe:</label>
+                        </div>
+                        <div>
+                            {{ form.nome_mae }}
+                        </div>
+                    </div>
+
+                    <div class="obs">
+                        <div>
+                            <label for="observacoes">Observações:</label>
+                        </div>
+                        <div>
+                            {{ form.observacoes }}
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
 </div>
-  
-  <style>
-    body {
-      background-color: black;
-      color: white;
-      font-family: sans-serif;
-      margin: 0;
-      align-items: center;
-      min-height: 100vh;
-    }
-  
-  
-    .container {
-      display: flex;
-      align-items: center;
-      margin-left: 100px;
-      justify-content: space-between;
-    }
-  
-    .logo {
-      font-size: 3em;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-  
-  
-  </style>
 
+<style>
+    body {
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0 auto;
+        padding-top: 80px;
+    }
+
+    .adicionar-aluno h1 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        text-align: center;
+        margin-top: 10px;
+        font-family: 'Inria Serif', serif;
+        font-weight: bold;
+    }
+
+    .form-container {
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .left-side {
+        text-align: center;
+        padding-left: 30px;
+        margin-left: 30px;
+        margin-bottom: 50px;
+        margin-right: 130px;
+        margin-top: 10px;
+    }
+
+    .form-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .obs {
+        display: block;
+        font-family: sans-serif;
+        font-size: 20px;
+    }
+
+    .form-group label {
+        font-size: 18px;
+        width: 100px;
+        margin-right: 10px;
+    }
+
+    .form-control {
+        background-color: #bcbcbc80;
+        color: white;
+        border: 1px solid #686868;
+        padding: 7px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        width: 400px;
+        box-sizing: border-box;
+        height: 35px;
+    }
+
+    .btn {
+        background-color: #686868;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        transition: background-color 0.3s;
+        border-radius: 5px;
+        width: 200px;
+        margin-top: 15px;
+        margin-left: 90px;
+        font-family: 'Inria Serif', serif;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background-color: #555;
+    }
+</style>
 {% endblock %}

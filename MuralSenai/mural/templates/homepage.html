@@ -8,38 +8,38 @@ SENAI - HOME
 
 {% block body %}
 
-<div class="container">
+<div class="container" style="padding-top: 70px;">
   <div>
     <h1 class="MuralTitulo">MURAL - SENAI <br>JUNDIAÍ</br></h1>
   </div>
   <div>
     <div class="form-container">
-      <h2 class="BEntrar" style="font-family: 'Inter', sans-serif;">ENTRAR</h2>
+      <h2 class="BEntrar" style="font-family: 'Inria Serif', serif; font-weight: bold; font-size: 28px;">ENTRAR</h2>
       <form method="POST">
         {% csrf_token %}
 
         <div class="form-group" style="display: block;">
-            <div>
-                <label for="id_nome">Usuário:</label>
-            </div>
-            <div>
-                {{ form.username}}
-            </div>
+          <div>
+            <label for="id_nome">Usuário:</label>
+          </div>
+          <div>
+            {{ form.username}}
+          </div>
         </div>
 
         <div class="form-group" style="display: block;">
-            <div>
-                <label for="id_email">Senha:</label>
-            </div>
-            <div>
-                {{ form.password}}
-            </div>
+          <div>
+            <label for="id_email">Senha:</label>
+          </div>
+          <div>
+            {{ form.password}}
+          </div>
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+          <button type="submit" class="btn btn-primary" style="font-family: 'Inria Serif', serif; font-weight: bold; font-size: 18px;">Acessar</button>
         </div>
-    </form>
+      </form>
     </div>
     <div class="login-link">
       <a href="#" style="font-family: 'Inter', sans-serif;">Esqueceu sua senha?</a>
@@ -60,6 +60,8 @@ SENAI - HOME
   h1 {
     color: var(--h1-color);
     transition: color 0.3s ease;
+    font-family: 'Inria Serif', serif;
+    font-weight: bold;
   }
 
 
@@ -81,6 +83,7 @@ SENAI - HOME
     padding: 20px;
     border-radius: 10px;
     margin-top: 100px;
+    width: 350px;
     margin-right: 150px;
   }
 
@@ -123,7 +126,7 @@ SENAI - HOME
     font-family: sans-serif;
     font-weight: normal;
     letter-spacing: 0;
-    margin-left: 75px;
+    margin-left: 120px;
 
   }
 

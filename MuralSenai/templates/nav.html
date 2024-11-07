@@ -1,16 +1,22 @@
 <style>
     /* Variáveis de tema */
+    /* Variáveis de tema */
     :root {
         --background-image: url('../static/img/Plano\ de\ Fundo\ Web\ -\ Claro\ -\ Mural.png');
         --text-color: #000;
         --button-text: #fff;
-        --navbar-background: #ffffff; /* Cor de fundo da navbar (claro) */
-        --text-color: #000; /* Cor do texto geral (claro) */
-        --link-color: #000; /* Cor do link de login (claro) */
-        --icon-color: #000; /* Cor do ícone (claro) */
-        --h1-color: #000; /* Cor do h1 (claro) */
-        --link-color: #000000; /* Cor do link (claro) */
-        
+        --navbar-background: #ffffff;
+        /* Cor de fundo da navbar (claro) */
+        --text-color: #000;
+        /* Cor do texto geral (claro) */
+        --link-color: #000;
+        /* Cor do link de login (claro) */
+        --icon-color: #000;
+        /* Cor do ícone (claro) */
+        --h1-color: #000;
+        /* Cor do h1 (claro) */
+        --link-color: #000000;
+        /* Cor do link (claro) */
     }
 
     /* Tema escuro */
@@ -18,12 +24,18 @@
         --background-image: url('../static/img/Plano\ de\ Fundo\ Web\ -\ Escuro.png');
         --text-color: #f1f1f1;
         --button-text: #000;
-        --navbar-background: #000000; /* Cor de fundo da navbar (escuro) */
-        --text-color: #f1f1f1; /* Cor do texto geral (escuro) */
-        --link-color: #f1f1f1; /* Cor do link de login (escuro) */
-        --icon-color: #f1f1f1; /* Cor do ícone (escuro) */ 
-        --h1-color: #f1f1f1; /* Cor do h1 (escuro) */ 
-        --link-color: #ffffff; /* Cor do link (escuro) */
+        --navbar-background: #000000;
+        /* Cor de fundo da navbar (escuro) */
+        --text-color: #f1f1f1;
+        /* Cor do texto geral (escuro) */
+        --link-color: #f1f1f1;
+        /* Cor do link de login (escuro) */
+        --icon-color: #f1f1f1;
+        /* Cor do ícone (escuro) */
+        --h1-color: #f1f1f1;
+        /* Cor do h1 (escuro) */
+        --link-color: #ffffff;
+        /* Cor do link (escuro) */
     }
 
     /* Aplicação das variáveis */
@@ -34,10 +46,12 @@
     }
 
     a {
-    color: var(--link-color);
+        color: var(--link-color);
     }
 
-    h1, p, span {
+    h1,
+    p,
+    span {
         color: var(--text-color);
     }
 
@@ -66,36 +80,48 @@
     }
 
     nav.navbar {
-    background-color: var(--navbar-background); /* Cor da navbar */
-    transition: background-color 0.3s ease;
+        background-color: var(--navbar-background);
+        /* Cor da navbar */
+        position: fixed;
+        /* Fixa a navbar no topo */
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        /* Garante que a navbar fique acima de outros elementos */
+        transition: background-color 0.3s ease;
+    }
 
-}
+    .person p {
+        color: var(--text-color);
+        /* Cor do texto */
+    }
 
-.person p {
-    color: var(--text-color); /* Cor do texto | */
-}
+    .person a {
+        color: var(--link-color);
+        /* Cor do link de login */
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
 
-.person a {
-    color: var(--link-color); /* Cor do link de login */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
+    .person a:hover {
+        color: #781010;
+        /* Cor ao passar o mouse (mantém o hover anterior) */
+    }
 
-.person a:hover {
-    color: #781010; /* Cor ao passar o mouse (mantém o hover anterior) */
-}
+    .person i {
+        color: var(--icon-color);
+        /* Cor do ícone */
+        transition: color 0.3s ease;
+    }
 
-.person i {
-    color: var(--icon-color); /* Cor do ícone */
-    transition: color 0.3s ease;
-}
+    .navbar-nav {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-.navbar-nav {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 </style>
 
@@ -104,7 +130,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav" style="gap: 865px">
                 <div class="logo2">
-                    <img src="/media/logo/logosenaivermelha.png" alt="Logo" style="max-width: 200px; max-height: 200px;">
+                    <img src="/media/logo/logosenaivermelha.png" alt="Logo"
+                        style="max-width: 200px; max-height: 200px;">
                 </div>
                 <div class="person" style="display: flex; align-items: center; gap: 10px;">
                     <div class="Buttons-component">
@@ -115,7 +142,8 @@
                         </button>
                     </div>
                     <p style="font-size: 20px; display: flex;">|</p>
-                    <a href="http://127.0.0.1:8000/" style="font-size: 20px; text-decoration: none; margin-right: 10px;">Login</a>
+                    <a href="http://127.0.0.1:8000/"
+                        style="font-size: 20px; text-decoration: none; margin-right: 10px;">Login</a>
                     <i class="bi bi-person-circle" style="font-size: 30px;"></i>
                 </div>
             </div>
